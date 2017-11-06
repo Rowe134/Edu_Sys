@@ -1,0 +1,141 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="zh">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - 教务系统</title>
+
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/base.css">
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+        <div class="top">
+            <div class="w t_cen">
+                <div class="t_c_logo">
+                    <a runat="server" href="~/">
+                        <asp:Image ID="logo" runat="server" ImageUrl="~/Content/Images/logo.png" /></a>
+                </div>
+                <div class="t_c_lr t_c_left"></div>
+                <div class="t_c_cen">
+                    <div class="t_c_top">
+                    </div>
+                    <div class="t_c_bottom">
+                        <ul>
+                            <li class="thisli">
+                                <a href="#"><em>官方首页</em><i>Home</i></a>
+                            </li>
+                            <li>
+                                <a href="#"><em>集团概况</em><i>About Us</i></a>
+                                <div class="Nodes">
+                                    <asp:Image ID="Image1" runat="server" ImageUrl="~/Content/Images/menu_top.png" />
+                                    <ul>
+                                        <li><a href="#">公司简介</a></li>
+                                        <li><a href="#">总部扶持</a></li>
+                                        <li><a href="#">服务团队</a></li>
+                                    </ul>
+                                    <asp:Image ID="Image2" runat="server" ImageUrl="~/Content/Images/menu_bottom.png" />
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#"><em>品牌中心</em><i>Brand</i></a>
+                                <div class="Nodes">
+                                    <asp:Image ID="Image3" runat="server" ImageUrl="~/Content/Images/menu_top.png" />
+                                    <ul>
+                                        <li><a href="#">品牌文化</a></li>
+                                        <li><a href="#">市场前景</a></li>
+                                        <li><a href="#">品牌形象</a></li>
+                                        <li><a href="#">店面形象</a></li>
+                                    </ul>
+                                    <asp:Image ID="Image6" runat="server" ImageUrl="~/Content/Images/menu_bottom.png" />
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#"><em>产品中心</em><i>Product </i></a>
+                                <div class="Nodes">
+                                    <asp:Image ID="Image4" runat="server" ImageUrl="~/Content/Images/menu_top.png" />
+                                    <ul>
+                                        <li><a href="#">产品案例</a></li>
+                                        <li><a href="#">核心产品</a></li>
+                                        <li><a href="#">主流产品</a></li>
+                                    </ul>
+                                    <asp:Image ID="Image7" runat="server" ImageUrl="~/Content/Images/menu_bottom.png" />
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#"><em>项目优势</em><i>Advantages</i></a>
+                                <div class="Nodes">
+                                    <asp:Image ID="Image5" runat="server" ImageUrl="~/Content/Images/menu_top.png" />
+                                    <ul>
+                                        <li><a href="#">产品优势</a></li>
+                                        <li><a href="#">投资优势</a></li>
+                                        <li><a href="#">店面优势</a></li>
+                                        <li><a href="#">总部优势</a></li>
+                                    </ul>
+                                    <asp:Image ID="Image8" runat="server" ImageUrl="~/Content/Images/menu_bottom.png" />
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#"><em>联系我们</em><i>Contact</i></a>
+                            </li>
+                        </ul>
+                        <div class="thisMenu" id="thisMenu"></div>
+                    </div>
+                </div>
+                <div class="t_c_lr t_c_right"></div>
+            </div>
+            <div class="user_fun">
+                <asp:LoginView runat="server" ViewStateMode="Disabled">
+                    <AnonymousTemplate>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a runat="server" href="~/Account/Register">注册</a></li>
+                            <li><a runat="server" href="~/Account/Login">登录</a></li>
+                        </ul>
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %>!</a></li>
+                            <li>
+                                <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="注销" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                            </li>
+                        </ul>
+                    </LoggedInTemplate>
+                </asp:LoginView>
+            </div>
+        </div>
+        <div class="container body-content" style="margin-top: 100px">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - 教务系统</p>
+            </footer>
+        </div>
+    </form>
+    <script src="../Scripts/mymenu.js"></script>
+</body>
+</html>
