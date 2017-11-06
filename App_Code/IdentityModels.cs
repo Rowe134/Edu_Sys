@@ -37,12 +37,12 @@ namespace Education_SYS
         // Used for XSRF when linking external logins
         public const string XsrfKey = "XsrfId";
 
-        public static void SignIn(UserManager manager, ApplicationUser user, bool isPersistent)
+        public static void SignIn(UserManager manager, ApplicationUser user)
         {
             IAuthenticationManager authenticationManager = HttpContext.Current.GetOwinContext().Authentication;
             authenticationManager.SignOut(DefaultAuthenticationTypes.ExternalCookie);
             var identity = manager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
-            authenticationManager.SignIn(new AuthenticationProperties() { IsPersistent = isPersistent }, identity);
+            authenticationManager.SignIn(identity);
         }
 
         public const string ProviderNameKey = "providerName";

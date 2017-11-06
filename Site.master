@@ -110,12 +110,7 @@
             </div>
             <div class="user_fun">
                 <asp:LoginView runat="server" ViewStateMode="Disabled">
-                    <AnonymousTemplate>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a runat="server" href="~/Account/Register">注册</a></li>
-                            <li><a runat="server" href="~/Account/Login">登录</a></li>
-                        </ul>
-                    </AnonymousTemplate>
+
                     <LoggedInTemplate>
                         <ul class="nav navbar-nav navbar-right">
                             <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %>!</a></li>

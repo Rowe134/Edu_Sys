@@ -26,7 +26,7 @@ public partial class Account_Login : Page
                 ApplicationUser user = manager.Find(UserName.Text, Password.Text);
                 if (user != null)
                 {
-                    IdentityHelper.SignIn(manager, user, RememberMe.Checked);
+                    IdentityHelper.SignIn(manager, user);
                     IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
                 }
                 else
